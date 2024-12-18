@@ -1,5 +1,6 @@
-from termcolor import colored
 import sys
+
+from termcolor import colored
 
 
 def main():
@@ -8,47 +9,61 @@ def main():
     print('\nWelcome to your time calculator: \n'),
     while opt != 9:
         print('Please SELECT AN OPTION: \n')
-        print(colored('1) Calculate weeks to months', 'green'))
-        print(colored('2) Calculate hours to seconds', 'green'))
-        print(colored('3) Calculate seconds to HH-MM-SS', 'green'))
-        print(colored('4) Calculate seconds to hours', 'green'))
-        print(colored('9) EXIT PROGRAM', 'yellow'))
-        opt = int(input(colored("Your option: ", 'red')))
-        if opt == 1:
-            print(colored("This option was NOT developed yet. Please come back later", 'cyan'))
-            pass
-        elif opt == 2:
-            print(colored("This option was NOT developed yet. Please come back later", 'cyan'))
-            pass
+        print(colored('1) Calculate weeks to months', color='green'))
+        print(colored('2) Calculate hours to seconds', color='green'))
+        print(colored('3) Calculate seconds to HH-MM-SS', color='green'))
+        print(colored('4) Calculate seconds to hours', color='green'))
+        print(colored('9) EXIT PROGRAM', color='yellow'))
+        opt = int(input(colored("Your option: ", color='red')))
+        if opt == 1: #TODO
+            weeks_to_months()
+        elif opt == 2: #TODO
+            print(colored("This option was NOT developed yet. Please come back later", color='cyan'))
+
         elif opt == 3:
             hours_to_format()
-        elif opt == 4:
-            pass
+        elif opt == 4: #TODO
+            print(colored("This option was NOT developed yet. Please come back later", color='cyan'))
+
         elif opt == 9:
             sys.exit()
         else:
-            print(colored("ERROR!! Invalid option, please retry", 'red', attrs=['bold', 'blink']))
+            print(colored("ERROR!! Invalid option, please retry", color='red', attrs=['bold', 'blink']))
 
 
 def hours_to_format():
-    number = int(input(colored('Please insert a number: ', 'yellow')))
+    while True:
+        number = int(input(colored('Please insert a number: ', color='yellow')))
 
-    def convert(seconds):
-        seconds = seconds % (24 * 3600)
-        hour = seconds // 3600
-        seconds %= 3600
-        minutes = seconds // 60
-        seconds %= 60
-        x = "%d:%02d:%02d" % (hour, minutes, seconds)
-        return x
+        def convert(seconds):
+            seconds = seconds % (24 * 3600)
+            hour = seconds // 3600
+            seconds %= 3600
+            minutes = seconds // 60
+            seconds %= 60
+            x = "%d:%02d:%02d" % (hour, minutes, seconds)
+            return x
 
-    print("Your result is: ", convert(number))
-    x = int(input("\nInput ANY VALUE to go back to the previous menu \n"
-                  "Press 1) to calculate another value: "))
-    if x == 1:
-        hours_to_format()
-    else:
-        pass
+        print("Your result is: ", convert(number))
+        option = int(input("\nInput ANY VALUE to go back to the previous menu \n"
+                  "Press 1 to calculate another value: "))
+        if option != 1:
+            break
+
+def weeks_to_months():
+    while True:
+        number = int(input(colored('Please insert a number of weeks: ', color='yellow')))
+
+        def convert(weeks):
+            months = weeks / 4.345
+            return months
+
+        print("Your result is: ", convert(number))
+        option = int(input("\nInput ANY value to got back to the previous menu \n"
+                      "Press 1 to calculate another value: "))
+        if option != 1:
+            break
+
 
 
 if __name__ == '__main__':
