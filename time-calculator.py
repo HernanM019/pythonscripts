@@ -15,7 +15,7 @@ def main():
         print(colored('4) Calculate seconds to hours', color='green'))
         print(colored('9) EXIT PROGRAM', color='yellow'))
         opt = int(input(colored("Your option: ", color='red')))
-        if opt == 1: #TODO
+        if opt == 1:
             weeks_to_months()
         elif opt == 2: #TODO
             print(colored("This option was NOT developed yet. Please come back later", color='cyan'))
