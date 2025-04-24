@@ -5,7 +5,7 @@ from termcolor import colored
 
 def main():
     opt = 0
-    print('ver0.1')
+    print('1.0')
     print('\nWelcome to your time calculator: \n'),
     while opt != 9:
         print('Please SELECT AN OPTION: \n')
