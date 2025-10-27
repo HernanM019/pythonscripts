@@ -104,7 +104,7 @@ def main():
         elif opt == 5:
             seconds_to_minutes()
         elif opt == 9:
-            print(colored("¡Hasta la próxima!", color='cyan'))
+            print(colored("Muchas gracias. Programa cerrado", color='cyan'))
             break
         else:
             print(colored("Opción inválida. Por favor, selecciona un número del menú.", color='red'))
